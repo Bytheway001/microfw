@@ -9,10 +9,10 @@ class Controller{
 		$this->payload = json_decode(file_get_contents("php://input"),TRUE);
 	}
 
-	protected function response(array $response){
-		header('Content-Type:application/json');
+	protected function response(array $response,$code=200){
+		http_response_code($code);
 		echo json_encode($response);
-		die(); 
+		die();
 	}
 }
 
