@@ -14,6 +14,9 @@ class Controller{
 		echo json_encode($response);
 		die();
 	}
+
+
+	
 }
 
 ?>
