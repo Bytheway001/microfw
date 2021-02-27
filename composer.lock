@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9775ebdc45b6c978b0505bdb648b94f5",
+    "content-hash": "b7fb557bb119edb505358b76fe250ba3",
     "packages": [
         {
             "name": "dannyvankooten/php-router",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Bytheway001/PHP-Router.git",
-                "reference": "aa2c6845e0ea555c26d2db5c65953adf58f5e2d7"
+                "reference": "b90a03d887763e37108e23a2a6056a5e59fc9e6c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Bytheway001/PHP-Router/zipball/aa2c6845e0ea555c26d2db5c65953adf58f5e2d7",
-                "reference": "aa2c6845e0ea555c26d2db5c65953adf58f5e2d7",
+                "url": "https://api.github.com/repos/Bytheway001/PHP-Router/zipball/b90a03d887763e37108e23a2a6056a5e59fc9e6c",
+                "reference": "b90a03d887763e37108e23a2a6056a5e59fc9e6c",
                 "shasum": ""
             },
             "require": {
@@ -59,7 +59,7 @@
             "support": {
                 "source": "https://github.com/Bytheway001/PHP-Router/tree/master"
             },
-            "time": "2020-04-20T17:59:25+00:00"
+            "time": "2020-10-20T04:58:42+00:00"
         },
         {
             "name": "fig/http-message-util",
@@ -67,16 +67,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/http-message-util.git",
-                "reference": "3242caa9da7221a304b8f84eb9eaddae0a7cf422"
+                "reference": "9d94dc0154230ac39e5bf89398b324a86f63f765"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/http-message-util/zipball/3242caa9da7221a304b8f84eb9eaddae0a7cf422",
-                "reference": "3242caa9da7221a304b8f84eb9eaddae0a7cf422",
+                "url": "https://api.github.com/repos/php-fig/http-message-util/zipball/9d94dc0154230ac39e5bf89398b324a86f63f765",
+                "reference": "9d94dc0154230ac39e5bf89398b324a86f63f765",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.3 || ^7.0"
+                "php": "^5.3 || ^7.0 || ^8.0"
             },
             "suggest": {
                 "psr/http-message": "The package containing the PSR-7 interfaces"
@@ -99,7 +99,7 @@
             "authors": [
                 {
                     "name": "PHP-FIG",
-                    "homepage": "http://www.php-fig.org/"
+                    "homepage": "https://www.php-fig.org/"
                 }
             ],
             "description": "Utility classes and constants for use with PSR-7 (psr/http-message)",
@@ -111,7 +111,7 @@
                 "request",
                 "response"
             ],
-            "time": "2020-02-05T20:36:27+00:00"
+            "time": "2020-11-24T22:02:12+00:00"
         },
         {
             "name": "filp/whoops",
@@ -551,7 +551,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "dannyvankooten/php-router": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

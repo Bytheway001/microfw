@@ -1,1 +1,0 @@
-<h3>THIS IS THE INDEX VIEW</h3>

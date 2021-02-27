@@ -3,7 +3,7 @@ $database=[
 	'host'=>'localhost',
 	'user'=>'root',
 	'password'=>'',
-	'name'=>'tpv',
+	'name'=>'mb_cobranzas',
 ]
 
 

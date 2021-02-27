@@ -4,10 +4,10 @@ use \Core\View;
 use \App\Models\Product;
 
 
-class homeController extends Controller{
+class homeController extends crudController{
+	
 	public function index(){
-		$product=Product::find([1]);
-		$this->response($product->serialize());
+		
 	}
 }
 

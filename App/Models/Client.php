@@ -1,7 +1,7 @@
 <?php 
 namespace App\Models;
 
-class Product extends Model{
+class Client extends \ActiveRecord\Model{
 	public function serialize(){
 		return $this->to_array();
 	}

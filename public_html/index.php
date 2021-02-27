@@ -5,7 +5,7 @@ define("DEBUG",true);
 require "../vendor/autoload.php";
 
 use PHPRouter\RouteCollection;
-use PHPRouter\Router;
+use Core\Router;
 use PHPRouter\Route;
 use PHPRouter\Config;
 
