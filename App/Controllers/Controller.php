@@ -28,7 +28,7 @@ class Controller{
 
 	protected function response(array $response,$code=200){
 		http_response_code($code);
-		echo json_encode($response);
+		echo json_encode(['data'=>$response]);
 		die();
 	}
 
@@ -37,7 +37,7 @@ class Controller{
 			throw new \Exception("Cannot call an error with code 200");
 		}
 		http_response_code($code);
-		echo json_encode($body);
+		echo json_encode(['data'=>$body]);
 		die();
 	}
 

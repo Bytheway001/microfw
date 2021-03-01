@@ -1,7 +1,5 @@
 <?php
 namespace App\Libs;
-
-  
   class Inflect
   {
       static $plural = array(

@@ -5,7 +5,6 @@
 namespace App\Controllers;
 class crudController extends Controller{
 	public function index(){
-
 		$result=[];
 		$resources = $this::$model::all();
 		print_r($this::$model);
@@ -23,7 +22,6 @@ class crudController extends Controller{
 		else{
 			$this->response(['errors'=>true,'data'=>"Error Desconocido"]);
 		}
-
 	}
 
 	public function update($id){
