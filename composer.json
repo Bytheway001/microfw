@@ -1,4 +1,15 @@
 {
+    "name": "bytheway001/microfw",
+    "description": "Boilerplate to develop php apps easily",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rafael",
+            "email": "Bytheway0708@gmail.com"
+        }
+    ],
+
     "minimum-stability": "dev",
     "require": {
         "php-activerecord/php-activerecord": "^1.2",
@@ -23,6 +34,10 @@
         {
             "type": "vcs",
             "url": "https://github.com/Bytheway001/PHP-Router"
+        },
+        {
+            "type":"vcs",
+            "url":"https://github.com/Bytheway001/php-activerecord"
         }
     ],
     "require-dev": {

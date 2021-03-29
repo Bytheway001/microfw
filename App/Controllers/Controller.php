@@ -1,6 +1,6 @@
 <?php 
 namespace App\Controllers;
-
+use App\Libs\Session;
 class Controller{
 	protected $request;
 
@@ -9,12 +9,27 @@ class Controller{
 	}
 
 	private function requireSession(){
-		if (! preg_match('/Bearer\s(\S+)/', $_SERVER['HTTP_AUTHORIZATION'], $matches)) {
-			header('HTTP/1.0 400 Bad Request');
-			echo 'Token not found in request';
-			exit;
+		if(!Session::isValid()){
+			$this->error("NOT AUTHENTICATED",403);
 		}
 	}
+
+	protected function response(array $response,$code=200){	
+		http_response_code($code);
+		echo json_encode(['data'=>$response]);
+		exit;
+	}
+
+	protected function error($body,$code=500){
+		if($code==200){
+			throw new \Exception("Cannot call an error with code 200");
+		}
+		http_response_code($code);
+		echo json_encode(['data'=>$body]);
+		exit;
+	}
+
+
 	/*
 	private function authenticateRequest() {
 		$uri = strtok($_SERVER['REQUEST_URI'], '?');
@@ -36,21 +51,9 @@ class Controller{
 		return $this->$name;
 	}
 
-	protected function response(array $response,$code=200){
-		
-		http_response_code($code);
-		echo json_encode(['data'=>$response]);
-		die();
-	}
 
-	protected function error(array $body,$code=500){
-		if($code==200){
-			throw new \Exception("Cannot call an error with code 200");
-		}
-		http_response_code($code);
-		echo json_encode(['data'=>$body]);
-		die();
-	}
+
+	
 
 }
 
