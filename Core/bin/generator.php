@@ -3,12 +3,12 @@ require "./vendor/autoload.php";
 require "./Core/init.php";
 require './Config/web.php';
 use \ActiveRecord\Config;
-
+use Dotenv\Dotenv;
+$dotenv = Dotenv::createImmutable(__DIR__."/../../");
+$dotenv->load();
 define("MODEL_FOLDER",__DIR__.'/../../App/Models');
 
-$cfg = Config::instance();
-$cfg->set_model_directory(PROJECTPATH.'/App/Models');
-$cfg->set_connections([	'development' => 'mysql://'.$database['user'].':'.$database['password'].'@'.$database['host'].'/'.$database['name'].';charset=utf8']);
+
 
 switch($argv[2]){
 	case "model":

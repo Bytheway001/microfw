@@ -6,16 +6,18 @@ use PHPRouter\RouteCollection;
 use PHPRouter\Router;
 use PHPRouter\Route;
 use PHPRouter\Config;
+use Dotenv\Dotenv;
 
+$dotenv = Dotenv::createImmutable("../");
+$dotenv->load();
 $config = Config::loadFromFile(PROJECTPATH.'/config/routes.yaml');
 $router = Router::parseConfig($config);
 
 ActiveRecord\Config::initialize(function($cfg)
 {
-	include('../config/web.php');
 	$cfg->set_model_directory(PROJECTPATH.'/App/Models');
 	$cfg->set_connections(array(
-	'development' => 'mysql://'.$database['user'].':'.$database['password'].'@'.$database['host'].'/'.$database['name'].';charset=utf8'));
+	'development' => 'mysql://'.$_ENV['DATABASE_USER'].':'.$_ENV['DATABASE_PASSWORD'].'@'.$_ENV['DATABASE_HOST'].'/'.$_ENV['DATABASE_NAME'].';charset=utf8'));
 });
 
 
