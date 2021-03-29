@@ -1,3 +1,0 @@
-17/12/2017
-13/03/2018 -> CrudController Implemented
-29/03/2018 -> Redoing controller namespaces
