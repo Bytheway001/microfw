@@ -1,15 +1,8 @@
 <?php 
-/**
-* This is the main controller class, The controllers should inherit from this class (for custom views) or from \Core\Crud (for simple crud scaffolds)
-*/
-
 namespace App\Controllers;
-use \Plasticbrain\FlashMessages\FlashMessages;
-use Symfony\Component\Yaml\Yaml;
+
 class Controller{
-	private $msg;
-	private $payload;
-	private $action;
+	protected $request;
 
 	public function __set($name,$value){
 		$this->$name = $value;
@@ -20,9 +13,6 @@ class Controller{
 	}
 
 	public function __construct(){
-		header('Content-Type:application/json');header('Content-Type:application/json');
-		$this->msg = new FlashMessages();
-		$this->payload = json_decode(file_get_contents("php://input"),TRUE);
 
 	}
 

@@ -1,11 +1,12 @@
 <?php 
 namespace App\Controllers;
 
-class homeController extends crudController{
+class homeController extends Controller{
 	public function index(){
-
-		
 	}
+
+
+	
 }
 
 
