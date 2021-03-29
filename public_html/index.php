@@ -1,20 +1,15 @@
 <?php 
-define("PROJECTPATH", dirname(__DIR__));
-define("APPPATH", PROJECTPATH . '/App');
-define("DEBUG",true);
-
-date_default_timezone_set('America/La_Paz');
+require '../core/init.php';
 require "../vendor/autoload.php";
 
 use PHPRouter\RouteCollection;
-use Core\Router;
+use PHPRouter\Router;
 use PHPRouter\Route;
 use PHPRouter\Config;
 
 $config = Config::loadFromFile(PROJECTPATH.'/config/routes.yaml');
 $router = Router::parseConfig($config);
 
-if (!session_id()) @session_start();
 ActiveRecord\Config::initialize(function($cfg)
 {
 	include('../config/web.php');

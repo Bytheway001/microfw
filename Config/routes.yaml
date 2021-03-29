@@ -1,10 +1,7 @@
 base_path: /
-resources:
-  - clients
 routes:
-  index: [/,homeController.index,GET]
-  test: [/test,\App\Controllers\crudController.index,GET]
-  
+  test:
+    main: [/test/main,main,GET]
 
 
 

@@ -1,4 +1,6 @@
 <?php 
+
+/* Database Credentials */
 $database=[
 	'host'=>'localhost',
 	'user'=>'root',
