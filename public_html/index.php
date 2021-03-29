@@ -1,16 +1,15 @@
 <?php 
-define("PROJECTPATH", dirname(__DIR__));
-define("APPPATH", PROJECTPATH . '/app');
-define("DEBUG",true);
+require '../core/init.php';
 require "../vendor/autoload.php";
+
 use PHPRouter\RouteCollection;
 use PHPRouter\Router;
 use PHPRouter\Route;
 use PHPRouter\Config;
+
 $config = Config::loadFromFile(PROJECTPATH.'/config/routes.yaml');
 $router = Router::parseConfig($config);
-//$router = Router::parseRafaFile($config);
-if (!session_id()) @session_start();
+
 ActiveRecord\Config::initialize(function($cfg)
 {
 	include('../config/web.php');
@@ -18,7 +17,6 @@ ActiveRecord\Config::initialize(function($cfg)
 	$cfg->set_connections(array(
 	'development' => 'mysql://'.$database['user'].':'.$database['password'].'@'.$database['host'].'/'.$database['name'].';charset=utf8'));
 });
-
 
 
 if(DEBUG==false){

@@ -1,10 +1,14 @@
 <?php 
+
+/* Database Credentials */
 $database=[
 	'host'=>'localhost',
 	'user'=>'root',
-	'password'=>'Silvereye1990',
-	'name'=>'delicias2',
+	'password'=>'',
+	'name'=>'tpv',
 ]
+
+
 
 
 

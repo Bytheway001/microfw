@@ -2,11 +2,13 @@
     "minimum-stability": "dev",
     "require": {
         "php-activerecord/php-activerecord": "^1.2",
-        "dannyvankooten/php-router":"master",
         "symfony/yaml": "^3.4",
-        "plasticbrain/php-flash-messages": "^1.0",
         "mikehaertl/phpwkhtmltopdf": "^2.2",
-        "filp/whoops": "^2.1"
+        "filp/whoops": "^2.1",
+        "dannyvankooten/php-router": "dev-master"
+    },
+    "scripts":{
+        "run":"php -S 127.0.0.1:200 -t public_html/"
     },
     "autoload": {
         "psr-4": {
