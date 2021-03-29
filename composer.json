@@ -5,11 +5,12 @@
         "symfony/yaml": "^3.4",
         "mikehaertl/phpwkhtmltopdf": "^2.2",
         "filp/whoops": "^2.1",
-        "dannyvankooten/php-router": "dev-master"
+        "dannyvankooten/php-router": "dev-master",
+        "vlucas/phpdotenv": "5.3.x-dev"
     },
     "scripts":{
-      
-        "test":"vendor\\bin\\phpunit Tests --testdox -c phpunit.xml "
+        "test":"vendor\\bin\\phpunit Tests --testdox -c phpunit.xml",
+        "generate":"Core\\bin\\generator generate"
     },
     "autoload": {
         "psr-4": {
@@ -27,4 +28,3 @@
         "phpunit/phpunit": "9"
     }
 }
-
