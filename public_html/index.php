@@ -1,26 +1,23 @@
 <?php 
-define("PROJECTPATH", dirname(__DIR__));
-define("APPPATH", PROJECTPATH . '/App');
-define("DEBUG",true);
-
-date_default_timezone_set('America/La_Paz');
+require '../core/init.php';
 require "../vendor/autoload.php";
 
 use PHPRouter\RouteCollection;
-use Core\Router;
+use PHPRouter\Router;
 use PHPRouter\Route;
 use PHPRouter\Config;
+use Dotenv\Dotenv;
 
+$dotenv = Dotenv::createImmutable("../");
+$dotenv->load();
 $config = Config::loadFromFile(PROJECTPATH.'/config/routes.yaml');
 $router = Router::parseConfig($config);
 
-if (!session_id()) @session_start();
 ActiveRecord\Config::initialize(function($cfg)
 {
-	include('../config/web.php');
 	$cfg->set_model_directory(PROJECTPATH.'/App/Models');
 	$cfg->set_connections(array(
-	'development' => 'mysql://'.$database['user'].':'.$database['password'].'@'.$database['host'].'/'.$database['name'].';charset=utf8'));
+	'development' => 'mysql://'.$_ENV['DATABASE_USER'].':'.$_ENV['DATABASE_PASSWORD'].'@'.$_ENV['DATABASE_HOST'].'/'.$_ENV['DATABASE_NAME'].';charset=utf8'));
 });
 
 

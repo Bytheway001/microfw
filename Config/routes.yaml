@@ -1,11 +1,8 @@
 base_path: /
-resources:
-  - clients
 routes:
-  index: [/,homeController.index,GET]
-  test: [/test,\App\Controllers\crudController.index,GET]
-  
-
+  home:
+    index: [/,index,GET]
+    index_p: [/:id,index,POST]
 
 
 

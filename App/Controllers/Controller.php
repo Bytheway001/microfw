@@ -1,15 +1,24 @@
 <?php 
-/**
-* This is the main controller class, The controllers should inherit from this class (for custom views) or from \Core\Crud (for simple crud scaffolds)
-*/
-
 namespace App\Controllers;
-use \Plasticbrain\FlashMessages\FlashMessages;
-use Symfony\Component\Yaml\Yaml;
+
 class Controller{
-	private $msg;
-	private $payload;
-	private $action;
+	protected $request;
+
+	public function __construct(){
+
+	}
+
+	 private function authenticateRequest() {
+        $uri = strtok($_SERVER['REQUEST_URI'], '?');
+        if ($uri !== '/auth') {
+            if (!isset($_SERVER['HTTP_U'])) {
+                $this->error('NOT AUTHENTICATED',403);
+            } else {
+                $this->current_id = $_SERVER['HTTP_U'];
+                $this->current_user = \App\Models\User::find([$this->current_id]);
+            }
+        }
+    }
 
 	public function __set($name,$value){
 		$this->$name = $value;
@@ -19,14 +28,8 @@ class Controller{
 		return $this->$name;
 	}
 
-	public function __construct(){
-		header('Content-Type:application/json');header('Content-Type:application/json');
-		$this->msg = new FlashMessages();
-		$this->payload = json_decode(file_get_contents("php://input"),TRUE);
-
-	}
-
 	protected function response(array $response,$code=200){
+		
 		http_response_code($code);
 		echo json_encode(['data'=>$response]);
 		die();

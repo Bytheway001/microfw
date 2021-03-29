@@ -1,3 +1,5 @@
 #composer
 /vendor
 /docs
+
+.env
