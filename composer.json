@@ -6,7 +6,8 @@
         "mikehaertl/phpwkhtmltopdf": "^2.2",
         "filp/whoops": "^2.1",
         "dannyvankooten/php-router": "dev-master",
-        "vlucas/phpdotenv": "5.3.x-dev"
+        "vlucas/phpdotenv": "5.3.x-dev",
+        "firebase/php-jwt": "dev-master"
     },
     "scripts":{
         "test":"vendor\\bin\\phpunit Tests --testdox -c phpunit.xml",

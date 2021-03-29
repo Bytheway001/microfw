@@ -1,7 +1,8 @@
 base_path: /
 routes:
   home:
-    index: [/,index,GET]
+    index: [/test,index,GET]
+    auth: [/auth,auth,GET]
     index_p: [/:id,index,POST]
 
 
