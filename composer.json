@@ -18,7 +18,8 @@
         "filp/whoops": "^2.1",
         "dannyvankooten/php-router": "dev-master",
         "vlucas/phpdotenv": "5.3.x-dev",
-        "firebase/php-jwt": "dev-master"
+        "firebase/php-jwt": "dev-master",
+        "bshaffer/oauth2-server-php": "dev-master"
     },
     "scripts":{
         "test":"vendor\\bin\\phpunit Tests --testdox -c phpunit.xml",
